@@ -1,12 +1,15 @@
-def factorial(n):
-    res = 1
-    for i in range(1, n + 1):
-        res *= i
-    return res
+S, N = list(map(int, input().split()))
+a = [int(input()) for i in range(N)]
 
+a.sort()
+summa = 0
+answer = 0
 
-n = int(input())
+for i in range(len(a)):
+    summa += a[i]
+    if summa <= S:
+        answer = i + 1
+    else:
+        break
 
-for i in range(1, n):
-    sum += factorial(i)
-print(sum)
+print(answer)
