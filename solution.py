@@ -1,15 +1,10 @@
-S, N = list(map(int, input().split()))
-a = [int(input()) for i in range(N)]
+def CountSort(A):
+    count_list = [0] * 101
+    for item in A:
+        count_list[item] += 1
+    for i in range(len(count_list)):
+        print((str(i) + ' ') * count_list[i], end='')
 
-a.sort()
-summa = 0
-answer = 0
 
-for i in range(len(a)):
-    summa += a[i]
-    if summa <= S:
-        answer = i + 1
-    else:
-        break
-
-print(answer)
+my_list = map(int, input().split())
+print(CountSort(my_list))
